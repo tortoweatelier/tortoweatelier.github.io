@@ -191,6 +191,12 @@ body{
   border-bottom:1px solid rgba(0,0,0,.05);
 }
 
+.section--tint{
+  background:linear-gradient(135deg, rgba(255,248,252,.9), rgba(247,242,255,.9));
+  border-top:1px solid rgba(0,0,0,.04);
+  border-bottom:1px solid rgba(0,0,0,.04);
+}
+
 .section__title{
   margin:0;
   font-family:"Great Vibes", cursive;
@@ -262,6 +268,72 @@ body{
 .price-table__cell{
   padding:6px 0;
   border-bottom:1px dashed rgba(0,0,0,.08);
+}
+
+.offer-card{
+  margin-top:18px;
+  background:rgba(255,255,255,.9);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 16px 36px rgba(0,0,0,.06);
+  display:grid;
+  gap:18px;
+}
+
+.offer-card__header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:10px 18px;
+}
+
+.offer-card__title{
+  margin:0;
+  font-size: clamp(20px, 3vw, 26px);
+  letter-spacing:1px;
+  color:var(--gold);
+}
+
+.offer-card__price{
+  margin:0;
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:rgba(43, 43, 43, .8);
+}
+
+.offer-card__section{
+  display:grid;
+  gap:8px;
+}
+
+.offer-card__label{
+  margin:0;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  color:rgba(43, 43, 43, .65);
+}
+
+.offer-card__grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:16px 20px;
+}
+
+.offer-card__list{
+  margin:0;
+  padding-left:18px;
+  display:grid;
+  gap:6px;
+  font-size:15px;
+}
+
+.offer-card__note{
+  margin:0;
+  font-size:13px;
+  color:rgba(43, 43, 43, .6);
 }
 
 .cta{
@@ -360,6 +432,9 @@ body{
   .price-table__cell{
     border-bottom:0;
     padding:2px 0 10px;
+  }
+  .offer-card__grid{
+    grid-template-columns: 1fr;
   }
 }
 
