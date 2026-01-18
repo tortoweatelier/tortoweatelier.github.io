@@ -1,6 +1,6 @@
 {
   "name": "tortoweatelier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,6 +9,6 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^4.16.0"
+    "astro": "^5.16.11"
   }
 }
