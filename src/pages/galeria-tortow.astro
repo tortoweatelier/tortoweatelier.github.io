@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+import cakes from "../data/cakes.json";
+
+const siteTitle = "Tortowe Atelier";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteTitle} — Galeria</title>
+    <meta name="description" content="Galeria tortów Tortowe Atelier." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="gallery" aria-label="Galeria tortów">
+      <header class="gallery__header">
+        <h1 class="gallery__title">Galeria tortów</h1>
+        <p class="gallery__subtitle">Tortowe Atelier</p>
+      </header>
+
+      <section class="gallery__grid">
+        {cakes.map((cake) => (
+          <button class="gallery__item" type="button" data-full={cake.src}>
+            <img src={cake.src} alt={cake.name} loading="lazy" />
+            <div class="gallery__caption">{cake.name}</div>
+          </button>
+        ))}
+      </section>
+    </main>
+
+    <div class="gallery__overlay" data-overlay>
+      <button class="gallery__close" type="button" data-close>ZAMKNIJ</button>
+      <img src="" alt="Podgląd tortu" data-overlay-image />
+    </div>
+
+    <script>
+      const overlay = document.querySelector("[data-overlay]");
+      const overlayImage = document.querySelector("[data-overlay-image]");
+      const closeButton = document.querySelector("[data-close]");
+      const items = document.querySelectorAll(".gallery__item");
+
+      const openOverlay = (src) => {
+        overlayImage.src = src;
+        overlay.classList.add("is-open");
+      };
+
+      const closeOverlay = () => {
+        overlay.classList.remove("is-open");
+        overlayImage.src = "";
+      };
+
+      items.forEach((item) => {
+        item.addEventListener("click", () => {
+          openOverlay(item.dataset.full);
+        });
+      });
+
+      closeButton.addEventListener("click", closeOverlay);
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+          closeOverlay();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeOverlay();
+        }
+      });
+    </script>
+  </body>
+</html>
