@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Tortoweatelier";
+const description = "Minimalny startowy projekt Astro.";
+---
+
+<Base title={title} description={description}>
+  <section class="hero">
+    <h1>{title}</h1>
+    <div class="divider"></div>
+    <p>
+      Witaj! To jest startowa strona projektu Astro. Możesz ją dowolnie
+      przerobić, dodać sekcje, zdjęcia i opisy swoich wypieków.
+    </p>
+    <p class="note">
+      Zacznij od edycji plików <code>src/pages/index.astro</code> i
+      <code>src/styles/global.css</code>.
+    </p>
+  </section>
+</Base>
