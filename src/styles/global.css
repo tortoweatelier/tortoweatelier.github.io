@@ -30,7 +30,7 @@ body{
   min-height:100svh;
   display:grid;
   place-items:center;
-  padding:32px 16px;
+  padding:24px 16px;
 }
 
 /* Soft “leafy” corners (no images required) */
@@ -56,20 +56,25 @@ body{
 /* Decorative cake drawings */
 .decor{
   position:absolute;
-  width:min(320px, 36vw);
+  width:clamp(112px, 19.2vw, 224px);
+  max-height:42vh;
   height:auto;
   opacity:.9;
   pointer-events:none;
   user-select:none;
   filter: drop-shadow(0 12px 30px rgba(0,0,0,.06));
+  animation: floatY 7s ease-in-out infinite;
 }
 .decor-top-right{
-  top:38px;
-  right:38px;
+  top:50%;
+  right:72px;
+  transform: translateY(-50%);
 }
 .decor-bottom-left{
-  bottom:42px;
-  left:42px;
+  top:50%;
+  left:72px;
+  transform: translateY(-50%);
+  animation-delay: -3.5s;
 }
 
 /* Center badge */
@@ -81,7 +86,7 @@ body{
 
 .badge__ring{
   position:relative;
-  width:min(520px, 86vw);
+  width:min(500px, 88vw);
   aspect-ratio:1/1;
   border-radius:999px;
   background:rgba(255,255,255,.78);
@@ -114,6 +119,8 @@ body{
   fill:#e7b3c2;
   font-size:26px;
   opacity:.9;
+  transform-origin:center;
+  animation: heartPulse 3.2s ease-in-out infinite;
 }
 
 .badge__content{
@@ -171,16 +178,40 @@ body{
   color:var(--gold);
   font-weight:500;
 }
+.badge__version{
+  margin:6px 0 0;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:rgba(43, 43, 43, .55);
+  text-transform:uppercase;
+}
 
 /* Responsive */
 @media (max-width: 720px){
-  .decor-top-right{ top:16px; right:16px; }
-  .decor-bottom-left{ bottom:16px; left:16px; }
-  .badge__ring{ padding:26px; }
+  .decor{
+    width:clamp(88px, 22.4vw, 160px);
+    opacity:.75;
+  }
+  .decor-top-right{ right:12px; }
+  .decor-bottom-left{ left:12px; }
+  .badge__ring{ padding:24px; }
   .badge__arcText{ font-size:24px; letter-spacing:5px; }
 }
 
 @media (max-width: 420px){
+  .decor{
+    display:none;
+  }
   .badge__arcText{ font-size:20px; letter-spacing:4px; }
   .badge__content{ padding-top:62px; }
+}
+
+@keyframes floatY{
+  0%, 100% { transform: translateY(-50%) translateY(0); }
+  50% { transform: translateY(-50%) translateY(-12px); }
+}
+
+@keyframes heartPulse{
+  0%, 100% { transform: scale(1); opacity:.85; }
+  50% { transform: scale(1.08); opacity:1; }
 }
