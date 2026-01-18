@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 const siteTitle = "Tortowe Atelier";
-const version = "0.0.5";
+const version = "0.0.6";
 ---
 
 <!doctype html>
@@ -72,7 +72,7 @@ const version = "0.0.5";
       </section>
       </section>
 
-      <section class="section section--soft reveal">
+      <section class="section section--soft section--stack reveal">
         <h2 class="section__title">Pasja, która ma smak</h2>
         <p class="section__text">
           Moja pasja do wypieków zaczęła się w domowej kuchni, gdzie piekłam dla
@@ -85,7 +85,7 @@ const version = "0.0.5";
         </p>
       </section>
 
-      <section class="section section--tint reveal">
+      <section class="section section--tint section--stack reveal">
         <h2 class="section__title">Ręcznie tworzone torty</h2>
         <p class="section__subtitle">Smak • Estetyka • Emocje</p>
         <p class="section__text">
@@ -208,7 +208,103 @@ const version = "0.0.5";
         </div>
       </section>
 
-      <footer class="section footer reveal">
+      <section class="section section--soft section--compact reveal">
+        <div class="profile">
+          <div class="profile__image">
+            <img src="/assets/profile.jpg" alt="Tortowe Atelier Moniki" loading="lazy" />
+          </div>
+          <div class="profile__content">
+            <h2 class="section__title">Tortowe Atelier Moniki</h2>
+            <p class="contact-line">
+              <a
+                class="contact-link"
+                href="https://maps.google.com/?q=ul.%20Solna%202a,%2005-500%20Piaseczno"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ul. Solna 2a, 05-500 Piaseczno
+              </a>
+            </p>
+            <p class="map-links">
+              <a
+                class="contact-link map-link map-link--apple"
+                href="https://maps.apple.com/?q=ul.%20Solna%202a,%2005-500%20Piaseczno"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="map-link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M8.8 4.2c.6-.8 1.7-1.4 2.8-1.3.1 1-.3 2-1 2.8-.6.7-1.6 1.3-2.7 1.2-.1-1 .3-1.9.9-2.7zm2.9 3.1c1.5 0 2.2.8 2.8.8.6 0 .9-.8 2.3-.8 1.2 0 2.5.7 3.1 1.9-2.7 1.5-2.2 5.3.5 6.4-.6 1.7-1.9 3.4-3.3 3.4-1.2 0-1.6-.8-2.9-.8-1.3 0-1.8.8-2.9.8-1.3 0-2.6-1.6-3.2-3.2-1.3-3.6.3-7.5 2.5-7.5 1.1 0 1.8.8 2.1.8z" />
+                  </svg>
+                </span>
+                Apple Maps
+              </a>
+              <span class="map-links__dot">•</span>
+              <a
+                class="contact-link map-link map-link--google"
+                href="https://maps.google.com/?q=ul.%20Solna%202a,%2005-500%20Piaseczno"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="map-link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                  </svg>
+                </span>
+                Google Maps
+              </a>
+            </p>
+            <p class="contact-line contact-line--strong">
+              <span class="contact-label">telefon kontaktowy:</span>
+              <a class="contact-link contact-link--value" href="tel:+48692531413">692 531 413</a>
+            </p>
+            <p class="contact-line contact-line--strong">
+              <span class="contact-label">email:</span>
+              <a class="contact-link contact-link--value" href="mailto:tortoweatelier@o2.pl">tortoweatelier@o2.pl</a>
+            </p>
+            <p class="section__text">
+              Znajdziesz mnie również na Facebook / Instagram / WhatsApp / Tik Tok,
+              gdzie pokazuję jak powstają moje projekty.
+            </p>
+            <div class="socials" aria-label="Social media Tortowe Atelier">
+              <a class="socials__link" href="https://www.facebook.com/profile.php?id=61586155050045" target="_blank" rel="noreferrer">
+                <span class="socials__icon socials__icon--fb" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v5h3v-5h2.2l.8-3H13V9c0-.6.4-1 1-1z" />
+                  </svg>
+                </span>
+                Facebook
+              </a>
+              <a class="socials__link" href="https://www.instagram.com/tortoweatelier.13?igsh=aH4MmvybjM5zwm4" target="_blank" rel="noreferrer">
+                <span class="socials__icon socials__icon--ig" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm5 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm6-1.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+                  </svg>
+                </span>
+                Instagram
+              </a>
+              <a class="socials__link" href="https://wa.me/48692531413?text=Chcia%C5%82abym%20zam%C3%B3wi%C4%87%20tort" target="_blank" rel="noreferrer">
+                <span class="socials__icon socials__icon--wa" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 3a7 7 0 0 1 0 14 7 7 0 0 1-3-0.7l-.4-.2-2.1.6.6-2.1-.2-.4A7 7 0 0 1 12 5zm3.7 8.7c-.2.6-1 1.2-1.7 1.3-.5.1-1.2.2-2-.1-.5-.2-1.2-.4-2-1.2-.9-.8-1.5-1.9-1.7-2.4-.2-.5 0-1 .2-1.2l.5-.6c.2-.2.3-.3.5-.3h.5c.2 0 .3 0 .5.5l.6 1.4c.1.2.1.3 0 .5l-.2.4c-.1.2-.3.3-.1.6.2.3.6 1 1.3 1.5.9.6 1.3.8 1.6.6.3-.1.9-.3 1-.6l.4-.5c.2-.2.4-.2.6-.1l1.4.7c.2.1.4.2.5.4.1.2.1.5 0 .7z" />
+                  </svg>
+                </span>
+                WhatsApp
+              </a>
+              <a class="socials__link" href="https://www.tiktok.com/@www.tiktok.tortowe" target="_blank" rel="noreferrer">
+                <span class="socials__icon socials__icon--tt" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img">
+                    <path d="M16 4c.6 1.7 2 3 3.7 3.3V10c-1.5-.1-2.9-.7-4-1.7v6.1a4.6 4.6 0 1 1-4-4.6v2.6a2.1 2.1 0 1 0 1.5 2V4h2.8z" />
+                  </svg>
+                </span>
+                TikTok
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="section section--soft footer reveal">
         <p class="footer__version">v{version}</p>
       </footer>
     </main>
@@ -227,6 +323,18 @@ const version = "0.0.5";
       );
 
       document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      document.querySelectorAll(".map-link--apple").forEach((link) => {
+        link.style.display = isIOS ? "inline-flex" : "none";
+      });
+      document.querySelectorAll(".map-link--google").forEach((link) => {
+        link.style.display = isIOS ? "none" : "inline-flex";
+      });
+      document.querySelectorAll(".map-links__dot").forEach((dot) => {
+        dot.style.display = "none";
+      });
     </script>
   </body>
 </html>
