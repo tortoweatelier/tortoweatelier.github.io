@@ -227,6 +227,43 @@ body{
   box-shadow:0 14px 32px rgba(0,0,0,.06);
 }
 
+.price-card{
+  margin-top:18px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 16px 36px rgba(0,0,0,.06);
+}
+
+.price-card__title{
+  margin:0 0 16px 0;
+  font-size: clamp(18px, 2.6vw, 24px);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+.price-table{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap:10px 16px;
+  font-size:15px;
+}
+
+.price-table__header{
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:12px;
+  color:rgba(43, 43, 43, .65);
+}
+
+.price-table__cell{
+  padding:6px 0;
+  border-bottom:1px dashed rgba(0,0,0,.08);
+}
+
 .cta{
   display:flex;
   flex-wrap:wrap;
@@ -248,10 +285,12 @@ body{
   letter-spacing:2px;
   text-transform:uppercase;
   box-shadow:0 14px 30px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  animation: ctaFloat 6s ease-in-out infinite;
 }
 
 .cta__button:hover{
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
@@ -295,17 +334,33 @@ body{
   }
   .decor-top-right{ right:12px; }
   .decor-bottom-left{ left:12px; }
-  .badge__ring{ padding:24px; }
-  .badge__arcText{ font-size:24px; letter-spacing:5px; }
+  .badge__ring{ padding:22px; }
+  .badge__arcText{ font-size:22px; letter-spacing:4px; }
+  .badge__titleMain{ font-size: clamp(38px, 7vw, 60px); }
+  .badge__name{ font-size: clamp(12px, 2.6vw, 16px); letter-spacing:3px; }
 }
 
 @media (max-width: 420px){
   .decor{
     display:none;
   }
-  .badge__arcText{ font-size:20px; letter-spacing:4px; }
-  .badge__content{ padding-top:62px; }
+  .badge__ring{ padding:18px; }
+  .badge__arcText{ font-size:18px; letter-spacing:3px; }
+  .badge__content{ padding-top:54px; }
+  .badge__mark{ width:min(120px, 38vw); height:min(120px, 38vw); }
+  .badge__titleMain{ font-size: clamp(34px, 10vw, 52px); }
+  .badge__name{ font-size:12px; letter-spacing:2.5px; }
   .section{ padding:72px 7vw; }
+  .price-table{
+    grid-template-columns: 1fr;
+  }
+  .price-table__header{
+    margin-top:8px;
+  }
+  .price-table__cell{
+    border-bottom:0;
+    padding:2px 0 10px;
+  }
 }
 
 @keyframes floatY{
@@ -316,6 +371,11 @@ body{
 @keyframes heartPulse{
   0%, 100% { transform: scale(1); opacity:.85; }
   50% { transform: scale(1.08); opacity:1; }
+}
+
+@keyframes ctaFloat{
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 /* Gallery page */
@@ -361,6 +421,7 @@ body{
   box-shadow:0 18px 40px rgba(0,0,0,.06);
   cursor:pointer;
   transition: transform .25s ease, box-shadow .25s ease;
+  animation: ctaFloat 8s ease-in-out infinite;
 }
 
 .gallery__item:hover{
@@ -423,4 +484,10 @@ body{
   font-size:14px;
   letter-spacing:2px;
   cursor:pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery__close:hover{
+  transform: translateY(-2px);
+  box-shadow:0 8px 16px rgba(0,0,0,.15);
 }
