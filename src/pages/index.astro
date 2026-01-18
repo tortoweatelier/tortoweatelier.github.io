@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 const siteTitle = "Tortowe Atelier";
-const version = "0.0.2";
+const version = "0.0.3";
 ---
 
 <!doctype html>
@@ -23,7 +23,8 @@ const version = "0.0.2";
   </head>
 
   <body>
-    <main class="hero" aria-label="Tortowe Atelier — strona główna">
+    <main aria-label="Tortowe Atelier — strona główna">
+      <section class="hero">
       <!-- Decorative illustrations (put files in /public/assets/) -->
       <img
         class="decor decor-top-right"
@@ -66,10 +67,68 @@ const version = "0.0.2";
             </h1>
 
             <p class="badge__name">MONIKA ZIELIŃSKA</p>
-            <p class="badge__version">v{version}</p>
           </div>
         </div>
       </section>
+      </section>
+
+      <section class="section section--soft reveal">
+        <h2 class="section__title">Ręcznie tworzone torty</h2>
+        <p class="section__subtitle">Smak • Estetyka • Emocje</p>
+        <p class="section__text">
+          Projektuję torty, które opowiadają Waszą historię. Każdy detal jest
+          dopracowany tak, aby pasował do okazji i budził zachwyt gości.
+        </p>
+      </section>
+
+      <section class="section reveal">
+        <h2 class="section__title">Oferta</h2>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <p class="section__subtitle">Torty okolicznościowe</p>
+            <p class="section__text">Śluby, chrzciny, jubileusze i inne ważne chwile.</p>
+          </article>
+          <article class="highlight-card">
+            <p class="section__subtitle">Słodkie stoły</p>
+            <p class="section__text">Mini desery i spójna stylistyka całej oprawy.</p>
+          </article>
+          <article class="highlight-card">
+            <p class="section__subtitle">Indywidualne projekty</p>
+            <p class="section__text">Autorskie smaki i dekoracje dopasowane do Was.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--soft reveal">
+        <h2 class="section__title">Zobacz torty</h2>
+        <p class="section__text">
+          Przewiń galerię i wybierz inspiracje. Każde zdjęcie otwiera się na pełny ekran.
+        </p>
+        <div class="cta">
+          <a class="cta__button" href="/galeria-tortow">Przejdź do galerii</a>
+          <span class="cta__note">Wkrótce więcej smaków i zdjęć</span>
+        </div>
+      </section>
+
+      <footer class="section footer reveal">
+        <p class="footer__version">v{version}</p>
+      </footer>
     </main>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>
