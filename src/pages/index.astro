@@ -1,21 +1,72 @@
 ---
-import Base from "../layouts/Base.astro";
+import "../styles/global.css";
 
-const title = "Tortoweatelier";
-const description = "Minimalny startowy projekt Astro.";
+const siteTitle = "Tortowe Atelier";
 ---
 
-<Base title={title} description={description}>
-  <section class="hero">
-    <h1>{title}</h1>
-    <div class="divider"></div>
-    <p>
-      Witaj! To jest startowa strona projektu Astro. Możesz ją dowolnie
-      przerobić, dodać sekcje, zdjęcia i opisy swoich wypieków.
-    </p>
-    <p class="note">
-      Zacznij od edycji plików <code>src/pages/index.astro</code> i
-      <code>src/styles/global.css</code>.
-    </p>
-  </section>
-</Base>
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteTitle}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="hero" aria-label="Tortowe Atelier — strona główna">
+      <!-- Decorative illustrations (put files in /public/assets/) -->
+      <img
+        class="decor decor-top-right"
+        src="/assets/decor-cake-top-right.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        class="decor decor-bottom-left"
+        src="/assets/decor-cake-bottom-left.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <section class="badge" aria-label="Logo Tortowe Atelier">
+        <div class="badge__ring">
+          <!-- Curved text -->
+          <svg class="badge__arc" viewBox="0 0 600 600" role="img" aria-label="Dziękuję za zaufanie">
+            <defs>
+              <path id="topArc" d="M 90,300 A 210,210 0 0,1 510,300" />
+            </defs>
+
+            <text class="badge__arcText">
+              <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+                DZIĘKUJĘ ZA ZAUFANIE!
+              </textPath>
+            </text>
+
+            <text x="110" y="330" class="badge__heart" aria-hidden="true">♥</text>
+            <text x="470" y="330" class="badge__heart" aria-hidden="true">♥</text>
+          </svg>
+
+          <div class="badge__content">
+            <div class="badge__mark" aria-hidden="true">
+              <img src="/assets/cake-center.png" alt="" />
+            </div>
+
+            <h1 class="badge__title">
+              <span class="badge__titleMain">Tortowe Atelier</span>
+            </h1>
+
+            <p class="badge__name">MONIKA ZIELIŃSKA</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
